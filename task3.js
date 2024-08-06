@@ -28,9 +28,31 @@ const deleteButton = document.querySelector("#deleteButton");
 
 // solution №3
 
+// deleteButton.addEventListener("click", function () {
+//   const selectedOption = dropdown.options[dropdown.selectedIndex];
+//   if (selectedOption) {
+//     selectedOption.remove();
+//   }
+// });
+
+// solution №4
+
+const originalOptions = Array.from(dropdown.options).map((option) => {
+  return { value: option.value, text: option.text };
+});
+
 deleteButton.addEventListener("click", function () {
   const selectedOption = dropdown.options[dropdown.selectedIndex];
   if (selectedOption) {
     selectedOption.remove();
+  }
+
+  if (dropdown.options.length === 0) {
+    originalOptions.forEach((option) => {
+      const newOption = document.createElement("option");
+      newOption.value = option.value;
+      newOption.text = option.text;
+      dropdown.appendChild(newOption);
+    });
   }
 });

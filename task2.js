@@ -49,13 +49,25 @@ const body = document.querySelector("body");
 // solution №1
 
 buttonOne.addEventListener("click", function () {
-  body.style.backgroundColor = "blue";
+  if (body.style.backgroundColor === "blue") {
+    body.removeAttribute("style");
+  } else {
+    body.style.backgroundColor = "blue";
+  }
 });
 
 buttonTwo.addEventListener("click", function () {
-  body.style.backgroundColor = "orange";
+  if (body.style.backgroundColor === "orange") {
+    body.removeAttribute("style");
+  } else {
+    body.style.backgroundColor = "orange";
+  }
 });
 
 buttonThree.addEventListener("mouseover", function () {
-  body.style.backgroundColor = "brown";
+  if (body.style.backgroundColor === "brown") {
+    body.removeAttribute("style");
+  } else {
+    body.style.backgroundColor = "brown";
+  }
 });
