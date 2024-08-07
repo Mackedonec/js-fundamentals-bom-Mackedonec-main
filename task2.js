@@ -57,10 +57,10 @@ buttonOne.addEventListener("click", function () {
 });
 
 buttonTwo.addEventListener("click", function () {
-  if (body.style.backgroundColor === "orange") {
+  if (body.style.backgroundColor === "pink") {
     body.removeAttribute("style");
   } else {
-    body.style.backgroundColor = "orange";
+    body.style.backgroundColor = "pink";
   }
 });
 
